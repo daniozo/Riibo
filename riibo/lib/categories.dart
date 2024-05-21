@@ -4,23 +4,19 @@ const List<Map<String, String>> riiboCategories = [
     "icon": "assets/resto.svg",
   },
   {
-    "name": "Supermarché & épicerie",
-    "icon": "assets/store.svg",
+    "name": "Supermarché",
+    "icon": "assets/full_cart.svg",
   },
   {
     "name": "Boulangerie & pâtisserie",
     "icon": "assets/croissant.svg",
   },
   {
-    "name": "Fast Food",
+    "name": "Fast food",
     "icon": "assets/burger.svg",
   },
   {
-    "name": "Fruits et Légumes",
-    "icon": "assets/fruit.svg",
-  },
-  {
-    "name": "Boissons",
-    "icon": "assets/drink.svg",
+    "name": "Épicerie",
+    "icon": "assets/store.svg",
   },
 ];

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "834862970170",
+    "project_id": "riibo-9c796",
+    "storage_bucket": "riibo-9c796.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834862970170:android:ed5466be0ba2a049250c03",
+        "android_client_info": {
+          "package_name": "com.riibo.eigsica.riibo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9m2WqoE5XrE1Bky1tJVxqPbpJwN4861A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

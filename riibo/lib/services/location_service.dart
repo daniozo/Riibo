@@ -43,6 +43,21 @@ class LocationService {
     }
   }
 
+  void requestLocationPermission() async {
+    final permission = await Geolocator.checkPermission();
+    print('Permission: \n${permission}');
+    if (permission == LocationPermission.denied) {
+      await Geolocator.requestPermission();
+    }
+    else if (permission == LocationPermission.deniedForever) {
+      await Geolocator.openAppSettings();
+    }
+  }
+
+  Future<LocationPermission> permissionStatus() async {
+    return await Geolocator.checkPermission();
+  }
+
   double calculateDistance(LatLng point1, LatLng point2) {
     const geo.Distance distance = geo.Distance();
 

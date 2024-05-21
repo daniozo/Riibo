@@ -1,15 +1,13 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:riibo/screens/discover/discover_screen.dart';
 import 'package:riibo/screens/favorites/favorites_screen.dart';
 import 'package:riibo/screens/home/home_screen.dart';
 
-class Root extends StatefulWidget {
-  // final Widget child;
+import 'delivery/delivery_screen.dart';
 
+class Root extends StatefulWidget {
   const Root({
     super.key,
-    // required this.child,
   });
 
   @override
@@ -17,35 +15,26 @@ class Root extends StatefulWidget {
 }
 
 class RootState extends State<Root> {
-  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-
-  // Get the CupertinoTabScaffold's controller
+  late CupertinoTabController _tabController;
 
   @override
   void initState() {
     super.initState();
+    _tabController = CupertinoTabController();
   }
 
   @override
   void dispose() {
+    _tabController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-
-    // Color color = Color(0xFFFECE2F);
-    Color color =  CupertinoColors.systemOrange;
-
-
-    Widget currentScreen = const HomeScreen();
-
-    if (navigatorKey.currentState?.canPop() ?? false) {
-      navigatorKey.currentState?.pop();
-    }
+    Color color = CupertinoColors.systemOrange;
 
     return CupertinoTabScaffold(
-      key: navigatorKey,
+      controller: _tabController,
       tabBar: CupertinoTabBar(
         items: [
           BottomNavigationBarItem(
@@ -53,7 +42,7 @@ class RootState extends State<Root> {
               CupertinoIcons.house,
               size: 24,
             ),
-            activeIcon:  Icon(
+            activeIcon: Icon(
               CupertinoIcons.house_fill,
               size: 24,
               color: color,
@@ -99,20 +88,21 @@ class RootState extends State<Root> {
         ],
         activeColor: color,
         backgroundColor: CupertinoColors.white.withOpacity(0.34),
-        // border: Border.all(),
       ),
       tabBuilder: (BuildContext context, int index) {
         return CupertinoTabView(
           builder: (BuildContext context) {
             switch (index) {
               case 0:
-                return const HomeScreen();
+                return HomeScreen(tabController: _tabController);
               case 1:
                 return const DiscoverScreen();
               case 2:
                 return const FavoriteScreen();
+              case 3:
+                return const DeliveryScreen();
               default:
-                return const HomeScreen();
+                return Container();
             }
           },
         );
