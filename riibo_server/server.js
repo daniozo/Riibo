@@ -5,7 +5,7 @@ const { connectDB, sequelize } = require('./config/dbConfig');
 
 connectDB();
 
-const userRoutes = require('./routes / userRoutes');
+const userRoutes = require('./routes/userRoutes');
 const articleRoutes = require('./routes/articleRoutes');
 
 app.use(express.json());
