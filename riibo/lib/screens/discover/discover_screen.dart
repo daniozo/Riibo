@@ -66,16 +66,6 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
   late bool _hasLocationPermission = false;
 
   @override
-  void didUpdateWidget(covariant DiscoverScreen oldWidget) {
-    super.didUpdateWidget(oldWidget);
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-  }
-
-  @override
   void initState() {
     super.initState();
     _hasGrantedLocationPermission();
